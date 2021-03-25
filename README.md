@@ -1,4 +1,4 @@
-# encryption-layer-aws-s3-js
+# Client Side AWS S3 Encryption Layer from DataStrata.io: Javascript
 Javascript example of client-side encryption on AWS S3 using DataStrata.io Encryption Layers
 
 ## Prerequisites
