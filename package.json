@@ -26,6 +26,6 @@
   },
   "homepage": "https://github.com/DataStrata-io/encryption-layer-aws-s3-js#readme",
   "dependencies": {
-    "@datastrata/aws-s3-encryption-layer": "^1.0.6"
+    "@datastrata/aws-s3-encryption-layer": "^1.0.9"
   }
 }
