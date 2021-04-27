@@ -3,6 +3,8 @@ var fs = require('fs');
 
 const main = async () => {
     try {
+        const testBucketName = 'YOUR-BUCKET-NAME';
+        const testKey = 'test-file-encrypted-js.txt';
         const testFileName = 'test-file.txt';
 
         var fileStream = fs.createReadStream(testFileName);
@@ -16,24 +18,27 @@ const main = async () => {
             'us-east-1');
 
         const uploadResult = await encryptionLayer.putObject(    {
-            Bucket: 'datastrata-tutorial-bucket',
-            Key: 'test-file-encrypted-js.txt',
+            Bucket: testBucketName,
+            Key: testKey,
             Body: fileStream
         });
 
+        console.log('Object uploaded');
+
         const downloadResult = await encryptionLayer.getObject(    {
-            Bucket: 'datastrata-tutorial-bucket',
-            Key: 'test-file-encrypted-js.txt'
+            Bucket: testBucketName,
+            Key: testKey
         });
 
-        console.log('Your file after the round-trip:');
+        console.log('Object downloaded');
         console.log(downloadResult.Body.toString());
 
         const deleteResult = await encryptionLayer.deleteObject(    {
-            Bucket: 'datastrata-tutorial-bucket',
-            Key: 'test-file-encrypted-js.txt'
+            Bucket: testBucketName,
+            Key: testKey
         });
 
+        console.log('Object deleted');
     } catch (e) {
         console.log(e);
     }
